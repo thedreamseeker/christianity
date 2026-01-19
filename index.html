@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblical Family Trees</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5;">
+    
+    <div style="position: fixed; top: 20px; left: 20px; background-color: #2196F3; color: white; padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); font-weight: bold; z-index: 1000;">
+        Total People
+        <span style="font-size: 32px; display: block; margin-top: 5px;">450+</span>
+    </div>
+    
+    <div style="max-width: 100%; margin: 0 auto; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h1 style="text-align: center; color: #333; margin-bottom: 30px;">Biblical Family Trees</h1>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px;">
+            <button onclick="showTree('jesus')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Jesus Christ</button>
+            <button onclick="showTree('moses')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Moses</button>
+            <button onclick="showTree('aaron')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Aaron</button>
+            <button onclick="showTree('samuel')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Samuel</button>
+            <button onclick="showTree('isaiah')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Isaiah</button>
+            <button onclick="showTree('elijah')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Elijah</button>
+            <button onclick="showTree('elisha')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Elisha</button>
+            <button onclick="showTree('jeremiah')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Jeremiah</button>
+            <button onclick="showTree('ezekiel')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Ezekiel</button>
+            <button onclick="showTree('daniel')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Daniel</button>
+            <button onclick="showTree('jonah')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Jonah</button>
+            <button onclick="showTree('job')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Job</button>
+        </div>
+
+        <div id="tree-display"></div>
+    </div>
+
+    <script>
+        const trees = {
+            jesus: `
+                <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Genealogy from Adam to Jesus Christ</h2>
+                <div class="mermaid">
+flowchart TD
+    A[Adam] --- AE[Eve]
+    A & AE --> Cain
+    A & AE --> Abel
+    A & AE --> Seth
+    A & AE --> Child1[Unnamed children]
+
+    Cain --- CW[Cain wife]
+    Cain & CW --> Enoch_C[Enoch]
+    Enoch_C --> Irad
+    Irad --> Mehujael
+    Mehujael --> Methushael
+    Methushael --> Lamech_C[Lamech]
+
+    Lamech_C --- Adah_Cain[Adah]
+    Lamech_C --- Zillah
+    Lamech_C & Adah_Cain --> Jabal
+    Lamech_C & Adah_Cain --> Jubal
+    Lamech_C & Zillah --> Tubal_Cain
+    Lamech_C & Zillah --> Naamah
+
+    Seth --> Enosh
+    Enosh --> Kenan
+    Kenan --> Mahalalel
+    Mahalalel --> Jared
+    Jared --> Enoch_S[Enoch]
+    Enoch_S --> Methuselah
+    Methuselah --> Lamech_S[Lamech]
+    Lamech_S --> Noah
+
+    Noah --- WN[Noah wife]
+    Noah & WN --> Shem
+    Noah & WN --> Ham
+    Noah & WN --> Japheth
+
+    Ham --> Cush
+    Ham --> Mizraim
+    Ham --> Put
+    Ham --> Canaan
+
+    Japheth --> Gomer
+    Japheth --> Magog
+    Japheth --> Madai
+    Japheth --> Javan
+    Japheth --> Tubal
+    Japheth --> Meshech
+    Japheth --> Tiras
+
+    Shem --> Arphaxad
+    Arphaxad --> Shelah_Shem[Shelah]
+    Shelah_Shem --> Eber
+    Eber --> Peleg
+    Peleg --> Reu
+    Reu --> Serug
+    Serug --> Nahor1
+    Nahor1 --> Terah
+
+    Terah --- WT[Terah wife]
+    Terah & WT --> Abram
+    Terah & WT --> Nahor2
+    Terah & WT --> Haran
+    Haran --> Lot
+    Haran --> Milcah
+    Haran --> Iscah
+
+    Lot --> Moab
+    Lot --> Ben_Ammi
+
+    Nahor2 --- Milcah
+    Nahor2 & Milcah --> Bethuel
+    Bethuel --> Laban
+    Bethuel --> Rebekah
+
+    Abram --- Sarai
+    Abram -.-> Hagar
+    Abram --- Keturah
+    Abram & Sarai --> Isaac
+    Abram & Hagar --> Ishmael
+    Abram & Keturah --> Zimran
+    Abram & Keturah --> Jokshan
+    Abram & Keturah --> Medan
+    Abram & Keturah --> Midian
+    Abram & Keturah --> Ishbak
+    Abram & Keturah --> Shuah
+
+    Isaac --- Rebekah
+    Isaac & Rebekah --> Esau
+    Isaac & Rebekah --> Jacob
+
+    Jacob --> Israel[Israel]
+
+    Esau --- Adah_Esau[Adah]
+    Esau --- Basemath
+    Esau --- Oholibamah
+
+    Esau & Adah_Esau --> Eliphaz
+    Esau & Basemath --> Reuel
+    Esau & Oholibamah --> Jeush
+    Esau & Oholibamah --> Jalam
+    Esau & Oholibamah --> Korah_Esau[Korah]
+
+    Eliphaz --> Teman
+    Eliphaz --> Omar
+    Eliphaz --> Zepho
+    Eliphaz --> Gatam
+    Eliphaz --> Kenaz
+    Eliphaz -.-> Timna
+    Eliphaz & Timna --> Amalek
+
+    Reuel --> Nahath
+    Reuel --> Zerah_Esau[Zerah]
+    Reuel --> Shammah
+    Reuel --> Mizzah
+
+    Israel --- Leah
+    Israel --- Rachel
+    Israel -.-> Bilhah
+    Israel -.-> Zilpah
+
+    Israel & Leah --> Reuben
+    Israel & Leah --> Simeon
+    Israel & Leah --> Levi
+    Israel & Leah --> Judah
+    Israel & Leah --> Issachar
+    Israel & Leah --> Zebulun
+    Israel & Leah --> Dinah
+
+    Israel & Rachel --> Joseph_son[Joseph]
+    Israel & Rachel --> Benjamin
+
+    Israel & Bilhah --> Dan
+    Israel & Bilhah --> Naphtali
+
+    Israel & Zilpah --> Gad
+    Israel & Zilpah --> Asher
+
+    Judah --- Shua[Daughter of Shua]
+    Judah & Shua --> Er
+    Judah & Shua --> Onan
+    Judah & Shua --> Shelah_Judah[Shelah]
+
+    Er --- Tamar_first[Tamar]
+    Onan --- Tamar_second[Tamar]
+    Judah --- Tamar
+    Judah & Tamar --> Perez
+    Judah & Tamar --> Zerah
+
+    Perez --> Hezron
+    Hezron --> Ram
+    Ram --> Amminadab
+    Amminadab --> Nahshon
+    Nahshon --> Salmon
+
+    Salmon --- Rahab
+    Salmon & Rahab --> Boaz
+    Boaz --- Ruth
+    Boaz & Ruth --> Obed
+    Obed --> Jesse
+
+    Jesse --> Eliab
+    Jesse --> Abinadab
+    Jesse --> Shammah_Jesse[Shammah]
+    Jesse --> David
+
+    David --- Bathsheba
+    David --- Abigail
+    David --- Michal
+    David --- Ahinoam
+    David --- Maacah
+
+    David & Ahinoam --> Amnon
+    David & Abigail --> Chileab
+    David & Maacah --> Absalom
+    David & Bathsheba --> Solomon
+    David & Bathsheba --> Nathan_David[Nathan]
+
+    Solomon --> Rehoboam
+    Rehoboam --> Abijah
+    Abijah --> Asa
+    Asa --> Jehoshaphat
+    Jehoshaphat --> Jehoram
+    Jehoram --> Uzziah
+    Uzziah --> Jotham
+    Jotham --> Ahaz
+    Ahaz --> Hezekiah
+    Hezekiah --> Manasseh
+    Manasseh --> Amon
+    Amon --> Josiah
+    Josiah --> Jeconiah
+
+    Jeconiah --> Shealtiel
+    Shealtiel --> Zerubbabel
+    Zerubbabel --> Abiud
+    Abiud --> Eliakim
+    Eliakim --> Azor
+    Azor --> Zadok
+    Zadok --> Achim
+    Achim --> Eliud
+    Eliud --> Eleazar
+    Eleazar --> Matthan
+    Matthan --> Jacob_M[Jacob]
+
+    Nathan_David --> Mattatha
+    Mattatha --> Menan
+    Menan --> Melea
+    Melea --> Eliakim_L[Eliakim]
+    Eliakim_L --> Jonam
+    Jonam --> Joseph_L[Joseph]
+    Joseph_L --> Judah_L[Judah]
+    Judah_L --> Simeon_L[Simeon]
+    Simeon_L --> Levi_L[Levi]
+    Levi_L --> Matthat_L[Matthat]
+    Matthat_L --> Jorim
+    Jorim --> Eliezer
+    Eliezer --> Jose
+    Jose --> Er_L[Er]
+    Er_L --> Elmodam
+    Elmodam --> Cosam
+    Cosam --> Addi
+    Addi --> Melchi_L1[Melchi]
+    Melchi_L1 --> Neri
+    Neri --> Shealtiel_L[Shealtiel]
+    Shealtiel_L --> Zerubbabel_L[Zerubbabel]
+    Zerubbabel_L --> Rhesa
+    Rhesa --> Joanan
+    Joanan --> Joda
+    Joda --> Josech
+    Josech --> Semein
+    Semein --> Mattathias_L1[Mattathias]
+    Mattathias_L1 --> Maath
+    Maath --> Naggai
+    Naggai --> Esli
+    Esli --> Nahum
+    Nahum --> Amos_L[Amos]
+    Amos_L --> Mattathias_L2[Mattathias]
+    Mattathias_L2 --> Joseph_L2[Joseph]
+    Joseph_L2 --> Jannai
+    Jannai --> Melchi_L2[Melchi]
+    Melchi_L2 --> Levi_L2[Levi]
+    Levi_L2 --> Matthat_L2[Matthat]
+    Matthat_L2 --> Heli
+
+    Jacob_M --> Joseph
+    Heli --> Mary
+    Joseph --- Mary
+    Joseph & Mary -.-> Jesus[Jesus]
+
+    Joseph & Mary --> James_brother[James]
+    Joseph & Mary --> Joses_brother[Joses]
+    Joseph & Mary --> Simon_brother[Simon]
+    Joseph & Mary --> Jude_brother[Jude]
+    Joseph & Mary --> Sisters[Sisters]
+
+    classDef key fill:#ffd9b3,stroke:#cc6600,stroke-width:2px,color:#000,font-weight:bold;
+    classDef messiah fill:#ffbbbb,stroke:#cc0000,stroke-width:3px,color:#000,font-weight:bold;
+    classDef matriarch fill:#e0d4ff,stroke:#5a3ec8,stroke-width:2px,color:#000,font-weight:bold;
+
+    class A,AE,Cain,Abel,Seth,Noah,Shem,Ham,Japheth,Abram,Isaac,Jacob,Israel,Esau,Judah,David,Joseph,Jesus key;
+    class Sarai,Rahab,Ruth,Bathsheba,Mary,Leah,Rachel,Bilhah,Zilpah matriarch;
+    class Jesus messiah;
+                </div>
+            `,
+            moses: `
+                <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Moses Family</h2>
+                <div class="mermaid">
+flowchart TD
+    Levi --> Kohath
+    Kohath --> Amram
+    Amram --- Jochebed
+    Amram & Jochebed --> Miriam
+    Amram & Jochebed --> Aaron
+    Amram & Jochebed --> Moses
+    Moses --- Zipporah
+    Moses & Zipporah --> Gershom
+    Moses & Zipporah --> Eliezer
+
+    classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
+    classDef woman fill:#ffccff,stroke:#cc00cc,stroke-width:2px,color:#000;
+    
+    class Moses,Miriam prophet;
+    class Jochebed,Zipporah woman;
+                </div>
+            `,
+            aaron: `
+                <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Aaron Family</h2>
+                <div class="mermaid">
+flowchart TD
+    Levi --> Kohath
+    Kohath --> Amram
+    Amram --- Jochebed
+    Amram & Jochebed --> Miriam
+    Amram & Jochebed --> Aaron
+    Amram & Jochebed --> Moses
+    
+    Aaron --- Elisheba
+    Aaron & Elisheba --> Nadab
+    Aaron & Elisheba --> Abihu
+    Aaron & Elisheba --> Eleazar
+    Aaron & Elisheba --> Ithamar
+    
+    Eleazar --> Phinehas
+    Phinehas --> Abishua
+    Abishua --> Bukki
+    Bukki --> Uzzi
+    Uzzi --> Zerahiah
+    Zerahiah --> Meraioth
+    Meraioth --> Amariah
+    Amariah --> Ahitub
+    Ahitub --> Zadok
+
+    classDef priest fill:#ffffcc,stroke:#cccc00,stroke-width:2px,color:#000,font-weight:bold;
+    classDef woman fill:#ffccff,stroke:#cc00cc,stroke-width:2px,color:#000;
+    
+    class Aaron,Eleazar,Phinehas,Zadok priest;
+    class Jochebed,Elisheba woman;
+                </div>
+            `,
+            samuel: `
+                <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Samuel Family</h2>
+                <div class="mermaid">
+flowchart TD
+    Levi --> Kohath_S[Kohath]
+    Kohath_S --> Izhar
+    Izhar --> Korah_S[Korah]
+    Korah_S --> Assir
+    Assir --> Elkanah_anc[Elkanah]
+    Elkanah_anc --> Ebiasaph
+    Ebiasaph --> Assir2[Assir]
+    Assir2 --> Tahath
+    Tahath --> Zephaniah
+    Zephaniah --> Azariah_S[Azariah]
+    Azariah_S --> Joel_anc[Joel]
+    Joel_anc --> Elkanah_f[Elkanah]
+    
+    Elkanah_f --- Hannah
+    Elkanah_f --- Peninnah
+    
+    Elkanah_f & Hannah --> Samuel
+    Elkanah_f & Peninnah --> Children[Children]
+    
+    Samuel --> Joel_son[Joel]
+    Samuel --> Abijah_son[Abijah]
+    
+    classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
+    classDef woman fill:#ffccff,stroke:#cc00cc,stroke-width:2px,color:#000;
+    
+    class Samuel prophet;
+    class Hannah,Peninnah woman;
+                </div>
+            `,
+            isaiah: `
+                <div style="display:flex;gap:20px;align-items:flex-start;">
+                    <div style="flex:1;">
+                        <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Isaiah Family</h2>
+                        <div class="mermaid">
+flowchart TD
+    Amoz --> Isaiah
+    Isaiah --- Prophetess[Wife]
+    
+    Isaiah & Prophetess --> Shear_Jashub[Shear-Jashub]
+    Isaiah & Prophetess --> Maher[Maher-Shalal-Hash-Baz]
+    
+    Hezekiah[King Hezekiah] --- Hephzibah
+    Hezekiah & Hephzibah --> Manasseh[King Manasseh]
+    
+    classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
+    classDef king fill:#ccddff,stroke:#0044cc,stroke-width:2px,color:#000,font-weight:bold;
+    classDef woman fill:#ffccff,stroke:#cc00cc,stroke-width:2px,color:#000;
+    
+    class Isaiah,Amoz prophet;
+    class Hezekiah,Manasseh king;
+    class Prophetess,Hephzibah woman;
+                        </div>
+                    </div>
+                    <div style="width:300px;background-color:#f9f9f9;padding:15px;border-radius:8px;border:2px solid #ccddff;">
+                        <h3 style="color:#0044cc;margin-top:0;text-align:center;">Kings of Isaiah's Era</h3>
+                        <div class="mermaid">
+flowchart TD
+    Amaziah[King Amaziah] --> Uzziah[King Uzziah]
+    Uzziah --> Jotham[King Jotham]
+    Jotham --> Ahaz[King Ahaz]
+    Ahaz --> Hezekiah[King Hezekiah]
+    Hezekiah --> Manasseh[King Manasseh]
+    
+    classDef king fill:#ccddff,stroke:#0044cc,stroke-width:2px,color:#000,font-weight:bold;
+    class Amaziah,Uzziah,Jotham,Ahaz,Hezekiah,Manasseh king;
+                        </div>
+                    </div>
+                </div>
+            `,
+            elijah: `
+                <div style="display:flex;gap:20px;align-items:flex-start;">
+                    <div style="flex:1;">
+                        <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Elijah</h2>
+                        <div class="mermaid">
+flowchart TD
+    Unknown[Unknown parents] --> Elijah
+    
+    classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
+    
+    class Elijah prophet;
+                        </div>
+                    </div>
+                    <div style="width:300px;background-color:#f9f9f9;padding:15px;border-radius:8px;border:2px solid #ccddff;">
+                        <h3 style="color:#0044cc;margin-top:0;text-align:center;">Kings of Elijah's Era</h3>
+                        <div class="mermaid">
+flowchart TD
+    Omri[King Omri] --> Ahab[King Ahab]
+    Ahab --- Jezebel[Queen Jezebel]
+    Ahab & Jezebel --> Ahaziah[King Ahaziah]
+    Ahab & Jezebel --> Joram[King Joram]
+    
+    classDef king fill:#ccddff,stroke:#0044cc,stroke-width:2px,color:#000,font-weight:bold;
+    classDef woman fill:#ffccff,stroke:#cc00cc,stroke-width:2px,color:#000;
+    
+    class Omri,Ahab,Ahaziah,Joram king;
+    class Jezebel woman;
+                        </div>
+                    </div>
+                </div>
+            `,
+            elisha: `
+                <div style="display:flex;gap:20px;align-items:flex-start;">
+                    <div style="flex:1;">
+                        <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Elisha Family</h2>
+                        <div class="mermaid">
+flowchart TD
+    Shaphat --> Elisha
+    
+    classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
+    
+    class Elisha prophet;
+                        </div>
+                    </div>
+                    <div style="width:300px;background-color:#f9f9f9;padding:15px;border-radius:8px;border:2px solid #ccddff;">
+                        <h3 style="color:#0044cc;margin-top:0;text-align:center;">Kings of Elisha's Era</h3>
+                        <div class="mermaid">
+flowchart TD
+    Ahab[King Ahab] --> Ahaziah[King Ahaziah]
+    Ahaziah -.successor.-> Jehoram[King Jehoram]
+    Jehoram -.successor.-> Jehu[King Jehu]
+    Jehu --> Jehoahaz[King Jehoahaz]
+    Jehoahaz --> Joash[King Joash]
+    
+    classDef king fill:#ccddff,stroke:#0044cc,stroke-width:2px,color:#000,font-weight:bold;
+    
+    class Ahab,Ahaziah,Jehoram,Jehu,Jehoahaz,Joash king;
+                        </div>
+                    </div>
+                </div>
+            `,
+            jeremiah: `
+                <div style="display:flex;gap:20px;align-items:flex-start;">
+                    <div style="flex:1;">
+                        <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Jeremiah Family</h2>
+                        <div class="mermaid">
+flowchart TD
+    Hilkiah --> Jeremiah
+    Jeremiah -.-> Baruch[Baruch scribe]
+    
+    classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
+    
+    class Jeremiah,Hilkiah prophet;
+                        </div>
+                    </div>
+                    <div style="width:300px;background-color:#f9f9f9;padding:15px;border-radius:8px;border:2px solid #ccddff;">
+                        <h3 style="color:#0044cc;margin-top:0;text-align:center;">Kings of Jeremiah's Era</h3>
+                        <div class="mermaid">
+flowchart TD
+    Josiah[King Josiah] --> Jehoahaz[King Jehoahaz]
+    Josiah --> Jehoiakim[King Jehoiakim]
+    Josiah --> Zedekiah[King Zedekiah]
+    Jehoiakim --> Jehoiachin[King Jehoiachin]
+    
+    classDef king fill:#ccddff,stroke:#0044cc,stroke-width:2px,color:#000;
+    
+    class Josiah,Jehoahaz,Jehoiakim,Jehoiachin,Zedekiah king;
+                        </div>
+                    </div>
+                </div>
+            `,
+            ezekiel: `
+                <div style="display:flex;gap:20px;align-items:flex-start;">
+                    <div style="flex:1;">
+                        <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Ezekiel Family</h2>
+                        <div class="mermaid">
+flowchart TD
+    Buzi --> Ezekiel
+    Ezekiel --- Wife[Wife]
+    
+    classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
+    classDef woman fill:#ffccff,stroke:#cc00cc,stroke-width:2px,color:#000;
+    
+    class Ezekiel,Buzi prophet;
+    class Wife woman;
+                        </div>
+                    </div>
+                    <div style="width:300px;background-color:#f9f9f9;padding:15px;border-radius:8px;border:2px solid #ccddff;">
+                        <h3 style="color:#0044cc;margin-top:0;text-align:center;">Kings of Ezekiel's Era</h3>
+                        <div class="mermaid">
+flowchart TD
+    Josiah[King Josiah] --> Jehoiakim[King Jehoiakim]
+    Jehoiakim --> Jehoiachin[King Jehoiachin]
+    Jehoiachin -.successor.-> Zedekiah[King Zedekiah]
+    
+    classDef king fill:#ccddff,stroke:#0044cc,stroke-width:2px,color:#000;
+    
+    class Josiah,Jehoiakim,Jehoiachin,Zedekiah king;
+                        </div>
+                    </div>
+                </div>
+            `,
+            daniel: `
+                <div style="display:flex;gap:20px;align-items:flex-start;">
+                    <div style="flex:1;">
+                        <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Daniel and Companions</h2>
+                        <div class="mermaid">
+flowchart TD
+    Royal[Royal family of Judah] --> Daniel
+    Daniel -.-> Hananiah[Hananiah Shadrach]
+    Daniel -.-> Mishael[Mishael Meshach]
+    Daniel -.-> Azariah[Azariah Abednego]
+    
+    classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
+    
+    class Daniel prophet;
+                        </div>
+                    </div>
+                    <div style="width:300px;background-color:#f9f9f9;padding:15px;border-radius:8px;border:2px solid #ccddff;">
+                        <h3 style="color:#0044cc;margin-top:0;text-align:center;">Kings of Daniel's Era</h3>
+                        <div class="mermaid">
+flowchart TD
+    Nebuchadnezzar[King Nebuchadnezzar] --> Evil_Merodach[Evil-Merodach]
+    Evil_Merodach -.successor.-> Belshazzar[King Belshazzar]
+    Belshazzar -.conquered.-> Darius[King Darius]
+    Darius -.successor.-> Cyrus[King Cyrus]
+    
+    classDef king fill:#ccddff,stroke:#0044cc,stroke-width:2px,color:#000;
+    
+    class Nebuchadnezzar,Evil_Merodach,Belshazzar,Darius,Cyrus king;
+                        </div>
+                    </div>
+                </div>
+            `,
+            jonah: `
+                <div style="display:flex;gap:20px;align-items:flex-start;">
+                    <div style="flex:1;">
+                        <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Jonah Family</h2>
+                        <div class="mermaid">
+flowchart TD
+    Amittai --> Jonah
+    
+    classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
+    
+    class Jonah,Amittai prophet;
+                        </div>
+                    </div>
+                    <div style="width:300px;background-color:#f9f9f9;padding:15px;border-radius:8px;border:2px solid #ccddff;">
+                        <h3 style="color:#0044cc;margin-top:0;text-align:center;">King of Jonah's Era</h3>
+                        <div class="mermaid">
+flowchart TD
+    Jehoash[King Jehoash] --> Jeroboam[King Jeroboam II]
+    
+    classDef king fill:#ccddff,stroke:#0044cc,stroke-width:2px,color:#000;
+    
+    class Jehoash,Jeroboam king;
+                        </div>
+                    </div>
+                </div>
+            `,
+            job: `
+                <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Job Family</h2>
+                <div class="mermaid">
+flowchart TD
+    Unknown[Unknown ancestry] --> Job
+    Job --- Wife[Wife]
+    
+    Job & Wife --> Sons1[Seven sons]
+    Job & Wife --> Daughters1[Three daughters]
+    
+    Job & Wife --> Sons2[Seven sons restored]
+    Job & Wife --> Jemimah
+    Job & Wife --> Keziah
+    Job & Wife --> Keren_Happuch[Keren-Happuch]
+    
+    Job -.-> Eliphaz[Eliphaz]
+    Job -.-> Bildad[Bildad]
+    Job -.-> Zophar[Zophar]
+    Job -.-> Elihu[Elihu]
+    
+    classDef righteous fill:#ccffcc,stroke:#00cc00,stroke-width:3px,color:#000,font-weight:bold;
+    classDef woman fill:#ffccff,stroke:#cc00cc,stroke-width:2px,color:#000;
+    
+    class Job righteous;
+    class Wife,Jemimah,Keziah,Keren_Happuch woman;
+                </div>
+            `
+        };
+
+        function showTree(name) {
+            const display = document.getElementById('tree-display');
+            display.innerHTML = trees[name];
+            mermaid.init(undefined, display.querySelectorAll('.mermaid'));
+        }
+
+        mermaid.initialize({ startOnLoad: false });
+    </script>
+</body>
+</html>
