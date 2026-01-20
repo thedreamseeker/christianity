@@ -10,31 +10,33 @@
     
     <div style="position: fixed; top: 20px; left: 20px; background-color: #2196F3; color: white; padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); font-weight: bold; z-index: 1000;">
         Total People
-        <span style="font-size: 32px; display: block; margin-top: 5px;">450+</span>
+        <span id="people-count" style="font-size: 32px; display: block; margin-top: 5px;">320</span>
     </div>
     
     <div style="max-width: 100%; margin: 0 auto; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
         <h1 style="text-align: center; color: #333; margin-bottom: 30px;">Biblical Family Trees</h1>
         
         <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px;">
-            <button onclick="showTree('jesus')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Jesus Christ</button>
-            <button onclick="showTree('moses')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Moses</button>
-            <button onclick="showTree('aaron')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Aaron</button>
-            <button onclick="showTree('samuel')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Samuel</button>
-            <button onclick="showTree('isaiah')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Isaiah</button>
-            <button onclick="showTree('elijah')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Elijah</button>
-            <button onclick="showTree('elisha')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Elisha</button>
-            <button onclick="showTree('jeremiah')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Jeremiah</button>
-            <button onclick="showTree('ezekiel')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Ezekiel</button>
-            <button onclick="showTree('daniel')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Daniel</button>
-            <button onclick="showTree('jonah')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Jonah</button>
-            <button onclick="showTree('job')" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Job</button>
+            <button id="btn-jesus" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Jesus Christ</button>
+            <button id="btn-moses" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Moses</button>
+            <button id="btn-aaron" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Aaron</button>
+            <button id="btn-samuel" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Samuel</button>
+            <button id="btn-isaiah" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Isaiah</button>
+            <button id="btn-elijah" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Elijah</button>
+            <button id="btn-elisha" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Elisha</button>
+            <button id="btn-jeremiah" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Jeremiah</button>
+            <button id="btn-ezekiel" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Ezekiel</button>
+            <button id="btn-daniel" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Daniel</button>
+            <button id="btn-jonah" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Jonah</button>
+            <button id="btn-job" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Job</button>
         </div>
 
         <div id="tree-display"></div>
     </div>
 
     <script>
+        mermaid.initialize({ startOnLoad: false });
+        
         const trees = {
             jesus: `
                 <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Genealogy from Adam to Jesus Christ</h2>
@@ -44,7 +46,6 @@ flowchart TD
     A & AE --> Cain
     A & AE --> Abel
     A & AE --> Seth
-    A & AE --> Child1[Unnamed children]
 
     Cain --- CW[Cain wife]
     Cain & CW --> Enoch_C[Enoch]
@@ -150,7 +151,7 @@ flowchart TD
 
     Reuel --> Nahath
     Reuel --> Zerah_Esau[Zerah]
-    Reuel --> Shammah
+    Reuel --> Shammah_Esau[Shammah]
     Reuel --> Mizzah
 
     Israel --- Leah
@@ -290,7 +291,6 @@ flowchart TD
     Joseph & Mary --> Joses_brother[Joses]
     Joseph & Mary --> Simon_brother[Simon]
     Joseph & Mary --> Jude_brother[Jude]
-    Joseph & Mary --> Sisters[Sisters]
 
     classDef key fill:#ffd9b3,stroke:#cc6600,stroke-width:2px,color:#000,font-weight:bold;
     classDef messiah fill:#ffbbbb,stroke:#cc0000,stroke-width:3px,color:#000,font-weight:bold;
@@ -377,7 +377,6 @@ flowchart TD
     Elkanah_f --- Peninnah
     
     Elkanah_f & Hannah --> Samuel
-    Elkanah_f & Peninnah --> Children[Children]
     
     Samuel --> Joel_son[Joel]
     Samuel --> Abijah_son[Abijah]
@@ -554,13 +553,10 @@ flowchart TD
             daniel: `
                 <div style="display:flex;gap:20px;align-items:flex-start;">
                     <div style="flex:1;">
-                        <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Daniel and Companions</h2>
+                        <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Daniel</h2>
                         <div class="mermaid">
 flowchart TD
     Royal[Royal family of Judah] --> Daniel
-    Daniel -.-> Hananiah[Hananiah Shadrach]
-    Daniel -.-> Mishael[Mishael Meshach]
-    Daniel -.-> Azariah[Azariah Abednego]
     
     classDef prophet fill:#ffcc99,stroke:#ff6600,stroke-width:3px,color:#000,font-weight:bold;
     
@@ -613,21 +609,10 @@ flowchart TD
                 <h2 style="text-align:center;color:#2196F3;margin-bottom:20px;">Job Family</h2>
                 <div class="mermaid">
 flowchart TD
-    Unknown[Unknown ancestry] --> Job
     Job --- Wife[Wife]
-    
-    Job & Wife --> Sons1[Seven sons]
-    Job & Wife --> Daughters1[Three daughters]
-    
-    Job & Wife --> Sons2[Seven sons restored]
     Job & Wife --> Jemimah
     Job & Wife --> Keziah
     Job & Wife --> Keren_Happuch[Keren-Happuch]
-    
-    Job -.-> Eliphaz[Eliphaz]
-    Job -.-> Bildad[Bildad]
-    Job -.-> Zophar[Zophar]
-    Job -.-> Elihu[Elihu]
     
     classDef righteous fill:#ccffcc,stroke:#00cc00,stroke-width:3px,color:#000,font-weight:bold;
     classDef woman fill:#ffccff,stroke:#cc00cc,stroke-width:2px,color:#000;
@@ -644,7 +629,18 @@ flowchart TD
             mermaid.init(undefined, display.querySelectorAll('.mermaid'));
         }
 
-        mermaid.initialize({ startOnLoad: false });
+        document.getElementById('btn-jesus').addEventListener('click', () => showTree('jesus'));
+        document.getElementById('btn-moses').addEventListener('click', () => showTree('moses'));
+        document.getElementById('btn-aaron').addEventListener('click', () => showTree('aaron'));
+        document.getElementById('btn-samuel').addEventListener('click', () => showTree('samuel'));
+        document.getElementById('btn-isaiah').addEventListener('click', () => showTree('isaiah'));
+        document.getElementById('btn-elijah').addEventListener('click', () => showTree('elijah'));
+        document.getElementById('btn-elisha').addEventListener('click', () => showTree('elisha'));
+        document.getElementById('btn-jeremiah').addEventListener('click', () => showTree('jeremiah'));
+        document.getElementById('btn-ezekiel').addEventListener('click', () => showTree('ezekiel'));
+        document.getElementById('btn-daniel').addEventListener('click', () => showTree('daniel'));
+        document.getElementById('btn-jonah').addEventListener('click', () => showTree('jonah'));
+        document.getElementById('btn-job').addEventListener('click', () => showTree('job'));
     </script>
 </body>
 </html>
